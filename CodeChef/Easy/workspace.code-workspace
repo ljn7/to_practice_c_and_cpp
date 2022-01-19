@@ -1,15 +1,9 @@
 {
 	"folders": [
-		{
-			"path": "c:\\Users\\johnn\\OneDrive\\Desktop\\CodeChef"
-		},
-		{
-			"path": "c:\\Users\\johnn\\OneDrive\\Desktop\\CodeNinjas"
-		},
-		{
-			"path": "D:\\competitive_programming"
-		}
-	],
+    {
+      "path": "D:\\competitive_programming"
+    }
+  ],
 	"settings": {
 		"files.associations": {
       "array": "cpp",
