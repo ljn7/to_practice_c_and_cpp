@@ -1,0 +1,57 @@
+Asymptotic notations just understand it clearly
+you dont have to do anything with log
+there is no math
+the only math you need is when you "Simply the time complexity of a Recurrsion algorithm"
+
+[8:34 PM]
+Mikasa Ackerman:
+	oh
+	to calculate worst case scenario only?
+
+[8:35 PM]
+ЯøçA®:
+	no no
+	its not liek that
+	you dont even worry about it
+	its prolly just in engineering
+	or im not sure
+	Analysis of Recursion in Programming
+	In this blog, we will analyze the recursive algorithm using Recurrence Tree Method, Master theorem. We will also discuss the advantages and disadvantages of recursion.
+	https://afteracademy.com/blog/analysis-of-recursion-in-programming
+
+	before the topic of
+	in this link
+	search for
+	Analyzing the Efficiency of Recursive Algorithms
+	just scroll till before Pros and Cons of recursive programming
+	> before the topic of ignore this line, mistyped
+	i'll tell you all later at night
+	im going out now
+
+[8:36 PM]
+Mikasa Ackerman:
+	Okay
+
+[8:36 PM]
+ЯøçA®:
+	we'll play dota at night maybe if i have time
+	when u sleep ?
+
+[8:37 PM]
+Mikasa Ackerman:
+	before 12 or 12:30
+
+[8:37 PM]
+ЯøçA®:
+	Method 1: Recursion Tree MethodMethod 2: Master theorem
+	These 2 methods are there
+	if you have these methods in syllabus, only then you need to worry
+	but even if it is there, it is like basic algebra
+	you still dont have to worry
+	if i play 1 or 2 before 12:30
+	i sleep by 12:30 too
+
+[8:38 PM]
+Mikasa Ackerman:
+	oh
+	Okay
