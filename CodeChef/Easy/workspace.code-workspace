@@ -85,7 +85,8 @@
       "forward_list": "cpp",
       "scoped_allocator": "cpp",
       "typeindex": "cpp",
-      "valarray": "cpp"
+      "valarray": "cpp",
+      "ios": "cpp"
     }
 	}
 }
