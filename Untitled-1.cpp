@@ -1,12 +1,56 @@
 #include <iostream>
 
 int main () {
-  int** ptr = new int*[2];
-  int*** ptr2 = {&ptr};
+  // int** ptr = new int*[2];
+  // int*** ptr2 = {&ptr};
 
   // int x[4][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}};
 
   // std::cout <<**(x + 3) << " " << **(x + 3) << " " << *(x + 2) + 3; 
+
+  const int t = 10;
+
+  std::cout << t << std::endl;
+  std::cout << t << std::endl;
+
+  int* ptr = const_cast<int*>(&t);
+
+  std::cout << *ptr << std::endl;
+
+  *ptr = 12;
+  std::cout << t << std::endl;
+
+
+  int *d = ptr;
+  std::cout << t << std::endl;
+  std::cout << *d << std::endl;
+
+
+struct sizeTest {
+  bool c : 1;
+  
+};
+
+std::cout << "Size Of A Class" << std::endl;
+std::cout << sizeof(sizeTest) << std::endl;
+
+try {
+  int t = 10;
+  
+  if (t > 20) {
+
+  }
+  else {
+    throw t;
+  }
+}
+
+catch (int c) {
+  std::cout << "error " << t << std::endl;
+}
+
+
+
 
 
 
