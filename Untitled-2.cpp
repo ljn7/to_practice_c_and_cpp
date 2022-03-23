@@ -3,6 +3,24 @@
 #include <string>
 using std::cout;
 using std::endl;
+
+class Test {
+  public: 
+    int a;
+    int b;
+    friend std::ostream &operator<<(std::ostream& value, const Test& t);
+};
+
+  std::ostream &operator<<(std::ostream& value, const Test& t) {
+
+      value << t.a << t.b;
+      std::cout << "\noverloaded\n";
+      return value;
+
+    }
+
+
+
 int main() {
 
     struct Array {
@@ -43,4 +61,9 @@ int main() {
 
     // std::cout << **((ptr+1)+1) << std::endl;
     // std::cout << ptr[1][1];
+
+    Test t;
+    t.b = 10;
+    t.a = 20;
+    std::cout << t << 10 << 20;
 }
