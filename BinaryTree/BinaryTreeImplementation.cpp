@@ -80,6 +80,7 @@ class BinaryTree {
     TreeNode* _root;
     BinaryTree (int);
     int Insert_node (int);
+    int Insert_node_recursion (int, TreeNode*);
     int Delete_node (TreeNode*, int, TreeNode*);
     int Number_of_node (TreeNode*);
     int Sum_of_node (TreeNode*);
@@ -95,6 +96,25 @@ BinaryTree::BinaryTree (int data) {
   _root -> data = data;
   _root -> left = _root -> right = NULL;
 }
+
+int BinaryTree::Insert_node_recursion (int data, TreeNode* obj)  {
+  if (obj->left == NULL) {
+    TreeNode* newNode = new TreeNode;
+    newNode -> data = data;
+    newNode->left = newNode->right = NULL;
+    obj -> left = newNode;
+    return Height_of_node(_root);
+  }
+  else if (obj->right == NULL) {
+    TreeNode* newNode = new TreeNode;
+    newNode -> data = data;
+    newNode->left = newNode->right = NULL;
+    obj -> right = newNode;
+    return Height_of_node(_root);
+  }
+  
+}
+
 
 int BinaryTree::Insert_node(int data) {
   TreeNode* temp;
