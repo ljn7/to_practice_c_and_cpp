@@ -1,55 +1,29 @@
 #include <iostream>
-
-//Node for Tree
-
-struct TreeNode {
-  int data;
-  TreeNode* left;
-  TreeNode* right;
-};
-
-#include "Queue.h"
-
-class BinaryTree {
-  public:
-    TreeNode* _root;
-    BinaryTree (int);
-    int Insert_node (int);
-    int Insert_node_recursion (int, TreeNode*);
-    int Delete_node (TreeNode*, int, TreeNode*);
-    int Number_of_node (TreeNode*);
-    int Sum_of_node (TreeNode*);
-    void Traversal (TreeNode*);
-    int Height_of_node (TreeNode*);
-    TreeNode* Find_node (TreeNode*, int);
-    void FreeMem(TreeNode*);
-    ~BinaryTree ();
-};
+#include "binary_tree.h"
 
 BinaryTree::BinaryTree (int data) {
   _root = new TreeNode;
   _root -> data = data;
-  _root -> left = _root -> right = NULL;
+  _root -> left = _root -> right = nullptr;
 }
 
 int BinaryTree::Insert_node_recursion (int data, TreeNode* obj)  {
-  if (obj->left == NULL) {
+  if (obj->left == nullptr) {
     TreeNode* newNode = new TreeNode;
     newNode -> data = data;
-    newNode->left = newNode->right = NULL;
+    newNode->left = newNode->right = nullptr;
     obj -> left = newNode;
     return Height_of_node(_root);
   }
-  else if (obj->right == NULL) {
+  else if (obj->right == nullptr) {
     TreeNode* newNode = new TreeNode;
     newNode -> data = data;
-    newNode->left = newNode->right = NULL;
+    newNode->left = newNode->right = nullptr;
     obj -> right = newNode;
     return Height_of_node(_root);
   }
   
 }
-
 
 int BinaryTree::Insert_node(int data) {
   TreeNode* temp;
@@ -60,20 +34,20 @@ int BinaryTree::Insert_node(int data) {
     temp = que.front->data;
     que.deQueue();
 
-    if(temp->left == NULL) {
+    if(temp->left == nullptr) {
       temp->left = new TreeNode;
       temp->left->data = data;
-      temp->left->left = temp->left->right = NULL;
+      temp->left->left = temp->left->right = nullptr;
       break;
     }
 
     else
       que.enQueue(temp->left);
     
-    if(temp->right == NULL) {
+    if(temp->right == nullptr) {
       temp->right = new TreeNode;
       temp->right->data = data;
-      temp->right->left = temp->right->right = NULL;
+      temp->right->left = temp->right->right = nullptr;
       break;
     }
 
@@ -84,31 +58,31 @@ int BinaryTree::Insert_node(int data) {
 }
 
 void BinaryTree::Traversal(TreeNode* obj) {
-  if(obj == NULL)
+  if(obj == nullptr)
       return;
   Traversal(obj->left);
   std::cout << obj->data << " ";
   Traversal(obj->right);
 }
 
-int BinaryTree::Delete_node (TreeNode* obj, int key, TreeNode* prev = NULL) {
+int BinaryTree::Delete_node (TreeNode* obj, int key, TreeNode* prev = nullptr) {
   
 }
 
 int BinaryTree::Number_of_node (TreeNode* obj) {
-  if(obj == NULL)
+  if(obj == nullptr)
     return 0;
   return Number_of_node(obj->left) + Number_of_node(obj->right) + 1;
 }
 
 int BinaryTree::Sum_of_node (TreeNode* obj) {
-  if(obj == NULL)
+  if(obj == nullptr)
     return 0;
   return obj->data + Sum_of_node(obj->left) + Sum_of_node(obj->right); 
 }
 
 int BinaryTree::Height_of_node (TreeNode* obj) {
-  if (obj == NULL)
+  if (obj == nullptr)
     return 0;
   int lNode = Height_of_node(obj->left) + 1;
   int rNode = Height_of_node(obj->right) + 1;
@@ -117,8 +91,8 @@ int BinaryTree::Height_of_node (TreeNode* obj) {
 }
 
 TreeNode* BinaryTree::Find_node (TreeNode* obj, int data) {
-  if (obj == NULL)
-    return NULL;
+  if (obj == nullptr)
+    return nullptr;
   if (obj->data == data)
     return obj;
   Find_node(obj->left, data);
@@ -126,35 +100,15 @@ TreeNode* BinaryTree::Find_node (TreeNode* obj, int data) {
 }
 
 BinaryTree::~BinaryTree () {
-  if(this->_root != NULL) 
+  if(this->_root != nullptr) 
     FreeMem (_root);
 }
 
 void BinaryTree::FreeMem(TreeNode* obj) {
-  if (obj == NULL)
+  if (obj == nullptr)
     return;
   FreeMem (obj->left);
   FreeMem (obj->right);
   delete obj;
 }
 
-int main () {
-  //contructor (root node)
-  BinaryTree Test(10);
-
-  //Insertion
-  std::cout << "\nHeight = " <<   Test.Insert_node(20);
-  std::cout << "\nHeight = " <<   Test.Insert_node(30);
-  std::cout << "\nHeight = " <<   Test.Insert_node(40);
-  std::cout << "\nHeight = " <<   Test.Insert_node(50);
-  std::cout << "\nHeight = " <<   Test.Insert_node(60);
-  std::cout << "\nHeight = " <<   Test.Insert_node(70);
-  
-  //Summation of nodes
-  std::cout << "\nSum = " << Test.Sum_of_node(Test._root) << " ";
-
-  //Traversal of Tree
-  std::cout << std::endl;
-  Test.Traversal(Test._root);
-  TreeNode* findingNode = Test.Find_node(Test._root, 70);
-}

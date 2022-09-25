@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Queue.h"
+#include "queue.h"
 
 template <typename T>
 QNode<T>::QNode(T* d) {

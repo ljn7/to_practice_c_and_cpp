@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Qnode.h"
+#include "qnode.h"
 
 template <typename T>
 class Queue {
@@ -13,4 +13,4 @@ class Queue {
     bool isEmpty ();
 };
 
-#include "Queue.hpp"
+#include "queue.hpp"
